@@ -11,7 +11,7 @@ export default function SidebarLayout({ children }: IProp) {
   const [headings, setHeadings] = useState<IHeading[]>([]);
 
   useEffect(() => {
-    const contentHeadings = Array.from(document.querySelectorAll("section"));
+    const contentHeadings = Array.from(document.querySelectorAll("h2"));
     console.log("headlings : ", contentHeadings);
     const headingsData = contentHeadings.map(
       (heading, index) =>
@@ -19,7 +19,7 @@ export default function SidebarLayout({ children }: IProp) {
           id: `section${index}`,
           title: heading.textContent,
         } as IHeading)
-    );
+    ) as IHeading[];
     setHeadings(headingsData);
 
     const handleScroll = () => {
@@ -37,7 +37,6 @@ export default function SidebarLayout({ children }: IProp) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  console.log(currentIdx);
 
   return (
     <div className="flex w-full">
