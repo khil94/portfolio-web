@@ -8,18 +8,20 @@ interface IProp {
 export default function SideBarSection({ headlings, target }: IProp) {
   console.log(headlings);
   return (
-    <aside className="fixed top-0 left-0 z-40 w-64 h-screen">
-      {headlings.map((h, i) => {
-        return (
-          <li
-            className={`transition-all duration-300 ${
-              target === i ? "font-bold text-red-500 text-lg" : ""
-            }`}
-          >
-            <a href={`#${h.id}`}>{h.title}</a>
-          </li>
-        );
-      })}
+    <aside className="fixed top-0 left-0 z-40 w-64 h-screen p-5">
+      <ul>
+        {headlings.map((h, i) => {
+          return (
+            <li
+              className={` flex items-center h-10 list-none transition-all duration-300 ${
+                target === i ? "font-bold text-red-500 text-lg" : ""
+              }`}
+            >
+              <a href={`#${h.id}`}>{h.title}</a>
+            </li>
+          );
+        })}
+      </ul>
     </aside>
   );
 }
