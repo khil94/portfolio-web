@@ -16,6 +16,7 @@ const config: Config = {
             "border-color": "transparent",
           },
         },
+        appear: {},
       },
 
       animation: {
@@ -23,6 +24,7 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        main: "url('/main.jpg')",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
