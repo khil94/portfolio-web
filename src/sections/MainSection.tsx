@@ -21,7 +21,7 @@ export default function MainSection() {
       className="max-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex min-h-screen items-center"
     >
       <h2 className="hidden">Main</h2>
-      <h1 className="after:content-[''] after:ml-1 after:w-1 after:animate-blink after:border-l-slate-600 after:border-l-4 break-words mx-auto text-5xl text-slate-500">
+      <h1 className=" leading-relaxed after:content-[''] after:ml-1 after:w-1 after:animate-blink after:border-l-slate-600 after:border-l-4 break-words mx-auto text-5xl text-slate-500">
         {h1}
       </h1>
     </section>
