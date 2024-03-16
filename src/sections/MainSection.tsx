@@ -1,12 +1,28 @@
+import { useEffect, useState } from "react";
+
 export default function MainSection() {
+  const [h1, setH1] = useState("");
+
+  useEffect(() => {
+    const str = "FrontEnd 개발자 김효일의 포트폴리오입니다.";
+    const getStrByWord = setTimeout(() => {
+      console.log("hi");
+
+      if (h1.length !== str.length) {
+        setH1(str.slice(0, h1.length + 1));
+      }
+    }, 120);
+
+    return () => clearTimeout(getStrByWord);
+  });
   return (
     <section
       id="section0"
-      className="max-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:pt-32 flex min-h-screen items-center"
+      className="max-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex min-h-screen items-center"
     >
       <h2 className="hidden">Main</h2>
-      <h1 className="mx-auto max-w-4xl text-5xl font-medium tracking-tight h-auto text-slate-500">
-        FrontEnd 개발자 김효일의 포트폴리오입니다.
+      <h1 className="after:content-[''] after:ml-1 after:w-1 after:animate-blink after:border-l-slate-600 after:border-l-4 whitespace-nowrap overflow-hidden w-fit mx-auto text-5xl text-slate-500">
+        {h1}
       </h1>
     </section>
   );
