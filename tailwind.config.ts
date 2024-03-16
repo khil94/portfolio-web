@@ -10,6 +10,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        blink: {
+          "50%": {
+            "border-color": "transparent",
+          },
+        },
+      },
+
+      animation: {
+        blink: "blink .5s infinite alternate step-end",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
