@@ -8,7 +8,7 @@ interface IProp {
 export default function SideBarSection({ headlings, target }: IProp) {
   console.log(headlings);
   return (
-    <aside className="bg-white bg-opacity-50 fixed top-0 left-0 z-40 w-64 h-screen p-5">
+    <aside className=" max-sm:hidden bg-white bg-opacity-50 fixed top-0 left-0 z-40 w-64 h-screen p-5">
       <ul>
         {headlings.map((h, i) => {
           return (

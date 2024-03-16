@@ -41,7 +41,9 @@ export default function SidebarLayout({ children }: IProp) {
   return (
     <div className="flex w-full">
       <SideBarSection headlings={headings} target={currentIdx} />
-      <div className="flex flex-col w-full pl-64">{...children}</div>
+      <div className="flex flex-col w-full pl-64 max-sm:pl-0">
+        {...children}
+      </div>
     </div>
   );
 }
