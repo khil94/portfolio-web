@@ -18,7 +18,7 @@ export default function MainSection() {
   return (
     <section
       id="section0"
-      className="bg-main bg-contain max-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex min-h-screen items-center"
+      className="bg-main bg-contain max-auto px-4 sm:px-6 lg:px-8 flex min-h-screen items-center"
     >
       <h2 className="hidden">Main</h2>
       <h1 className=" font-bold leading-relaxed after:content-[''] after:ml-1 after:w-1 after:animate-blink after:border-l-white after:border-l-4 break-words mx-auto text-5xl text-white">
