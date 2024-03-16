@@ -1,7 +1,7 @@
 export default function AboutSection() {
   return (
     <section
-      id="section0"
+      id="section1"
       className="max-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:pt-32 flex min-h-screen items-center"
     >
       <h2 className="hidden">About</h2>
