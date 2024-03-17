@@ -2,7 +2,7 @@ import { IHeading } from "@/types/type";
 
 interface IProp {
   headlings: IHeading[];
-  target: number;
+  target: string;
 }
 
 export default function SideBarSection({ headlings, target }: IProp) {
@@ -14,7 +14,7 @@ export default function SideBarSection({ headlings, target }: IProp) {
             <li
               key={"href_to_" + h.id}
               className={` flex items-center h-10 list-none transition-all duration-300 ${
-                target === i ? "font-bold text-red-500 text-lg" : ""
+                target === `section${i}` ? "font-bold text-red-500 text-lg" : ""
               }`}
             >
               <a
