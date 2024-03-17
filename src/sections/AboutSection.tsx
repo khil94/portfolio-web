@@ -44,11 +44,37 @@ export default function AboutSection({ target }: IProp) {
           </div>
         </div>
         <div>
-          <h1 className="mx-auto text-5xl text-left  font-bold">Education</h1>
+          <div className="relative w-fit">
+            <h1
+              className={`mx-auto text-5xl text-left  font-bold ${
+                target
+                  ? "before:content-[''] before:bg-red-500 before:absolute before:w-full before:h-1 before:bottom-0 before:left-0 before:animate-appear"
+                  : ""
+              }`}
+            >
+              Education
+            </h1>
+          </div>
           <div className=" p-5">
             <p className=" ">
               명지대학교 용인캠퍼스 컴퓨터학과 졸업(2014 ~ 2020)
             </p>
+          </div>
+        </div>
+        <div>
+          <div className="relative w-fit">
+            <h1
+              className={`mx-auto text-5xl text-left  font-bold ${
+                target
+                  ? "before:content-[''] before:bg-red-500 before:absolute before:w-full before:h-1 before:bottom-0 before:left-0 before:animate-appear"
+                  : ""
+              }`}
+            >
+              Career
+            </h1>
+          </div>
+          <div className=" p-5">
+            <p className=" ">인공지능연구원 FE엔지니어(2021 ~ 2022)</p>
           </div>
         </div>
       </div>
