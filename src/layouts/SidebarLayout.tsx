@@ -1,3 +1,4 @@
+import { useScrollSpy } from "@/hooks/useIntersectionObservation";
 import AboutSection from "@/sections/AboutSection";
 import ContactSection from "@/sections/ContactSection";
 import MainSection from "@/sections/MainSection";
@@ -11,13 +12,12 @@ interface IProp {
 }
 
 export default function SidebarLayout({ children }: IProp) {
-  const [currentIdx, setCurrentIdx] = useState(0);
   const [headings, setHeadings] = useState<IHeading[]>([]);
   const [visited, setVisited] = useState(new Set());
+  const currentIdx = useScrollSpy();
 
   useEffect(() => {
     const contentHeadings = Array.from(document.querySelectorAll("h2"));
-    console.log("headlings : ", contentHeadings);
     const headingsData = contentHeadings.map(
       (heading, index) =>
         ({
@@ -26,30 +26,20 @@ export default function SidebarLayout({ children }: IProp) {
         } as IHeading)
     ) as IHeading[];
     setHeadings(headingsData);
-
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      let currentSectionIdx = null;
-      sections.forEach((s, i) => {
-        const sectionTop = s.offsetTop - 300;
-        if (window.scrollY >= sectionTop) {
-          currentSectionIdx = i;
-        }
-      });
-      setCurrentIdx(currentSectionIdx || 0);
-      setVisited(visited.add(currentSectionIdx));
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setVisited(visited.add(currentIdx));
+  }, [currentIdx]);
 
   return (
     <div className="flex w-full">
       <SideBarSection headlings={headings} target={currentIdx} />
       <div className="flex flex-col w-full pl-64 max-sm:pl-0">
         <MainSection />
-        <AboutSection target={visited.has(1)} />
+        <AboutSection
+          target={visited.has("section1") || currentIdx === "section1"}
+        />
         <ProjectSection />
         <SkillSection />
         <ContactSection />
