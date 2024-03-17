@@ -16,11 +16,22 @@ const config: Config = {
             "border-color": "transparent",
           },
         },
-        appear: {},
+        appear: {
+          "0%": {
+            transform: "scaleX(0)",
+          },
+          "50%": {
+            transform: "scaleX(1.05)",
+          },
+          "100%": {
+            transform: "scaleX(1.05)",
+          },
+        },
       },
 
       animation: {
         blink: "blink .5s infinite alternate step-end",
+        appear: "appear 2s forwards linear alternate",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
