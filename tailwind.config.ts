@@ -27,11 +27,16 @@ const config: Config = {
             transform: "scaleX(1.05)",
           },
         },
+        progress: {
+          from: { width: "30%" },
+          to: { width: "100%" },
+        },
       },
 
       animation: {
         blink: "blink .5s infinite alternate step-end",
         appear: "appear 2s forwards linear alternate",
+        progress: "progress 2s linear forwards",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
