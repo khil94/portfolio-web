@@ -1,4 +1,8 @@
-export default function SkillSection() {
+interface IProp {
+  target: boolean;
+}
+
+export default function SkillSection({ target }: IProp) {
   return (
     <section
       id="section2"
@@ -9,68 +13,92 @@ export default function SkillSection() {
         Skill
       </h1>
       <div className=" border-2 rounded-lg border-black p-8 grid grid-cols-3">
-        <div className="w-24 m-4">
+        <div className="w-24 m-8">
           {/* HTML */}
           <img src="/html.png" width={96} className="mb-2" />
           <div className=" rounded-xl bg-white ">
             <div className={`w-[80%] rounded-xl`}>
               <div
-                className={`h-4 rounded-xl animate-progress bg-yellow-400 transition-width`}
+                className={`h-4 rounded-xl ${
+                  target
+                    ? "animate-progress bg-yellow-400 transition-width"
+                    : ""
+                }`}
               />
             </div>
           </div>
         </div>
-        <div className="w-24 m-4">
+        <div className="w-24 m-8">
           {/* CSS */}
           <img src="/css.png" width={96} className="mb-2" />
           <div className=" rounded-xl bg-white ">
             <div className={`w-[70%] rounded-xl`}>
               <div
-                className={`h-4 rounded-xl animate-progress bg-yellow-400 transition-width`}
+                className={`h-4 rounded-xl ${
+                  target
+                    ? "animate-progress bg-yellow-400 transition-width"
+                    : ""
+                }`}
               />
             </div>
           </div>
         </div>
-        <div className="w-24 m-4">
+        <div className="w-24 m-8">
           {/* js */}
           <img src="/js.png" width={96} className="mb-2" />
           <div className=" rounded-xl bg-white ">
             <div className={`w-[80%] rounded-xl`}>
               <div
-                className={`h-4 rounded-xl animate-progress bg-yellow-400 transition-width`}
+                className={`h-4 rounded-xl ${
+                  target
+                    ? "animate-progress bg-yellow-400 transition-width"
+                    : ""
+                }`}
               />
             </div>
           </div>
         </div>
-        <div className="w-24 m-4">
+        <div className="w-24 m-8">
           {/* ts */}
           <img src="/ts.png" width={96} className="mb-2" />
           <div className=" rounded-xl bg-white ">
             <div className={`w-[70%] rounded-xl`}>
               <div
-                className={`h-4 rounded-xl animate-progress bg-yellow-400 transition-width`}
+                className={`h-4 rounded-xl ${
+                  target
+                    ? "animate-progress bg-yellow-400 transition-width"
+                    : ""
+                }`}
               />
             </div>
           </div>
         </div>
-        <div className="w-24 m-4">
+        <div className="w-24 m-8">
           {/* react */}
           <img src="/react.png" width={96} className="mb-2" />
           <div className=" rounded-xl bg-white ">
             <div className={`w-[80%] rounded-xl`}>
               <div
-                className={`h-4 rounded-xl animate-progress bg-yellow-400 transition-width`}
+                className={`h-4 rounded-xl ${
+                  target
+                    ? "animate-progress bg-yellow-400 transition-width"
+                    : ""
+                }`}
               />
             </div>
           </div>
         </div>
-        <div className="w-24 m-4">
+        <div className="w-24 m-8">
           {/* sass */}
           <img src="/sass.png" width={96} className="mb-2" />
           <div className=" rounded-xl bg-white ">
             <div className={`w-[50%] rounded-xl`}>
               <div
-                className={`h-4 rounded-xl animate-progress bg-yellow-400 transition-width`}
+                className={`h-4 rounded-xl ${
+                  target
+                    ? "animate-progress bg-yellow-400 transition-width"
+                    : ""
+                }`}
               />
             </div>
           </div>
