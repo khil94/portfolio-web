@@ -6,8 +6,6 @@ export default function MainSection() {
   useEffect(() => {
     const str = "FrontEnd 개발자 김효일의 포트폴리오입니다.";
     const getStrByWord = setTimeout(() => {
-      console.log("hi");
-
       if (h1.length !== str.length) {
         setH1(str.slice(0, h1.length + 1));
       }

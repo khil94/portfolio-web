@@ -29,7 +29,6 @@ export function useScrollSpy() {
     const observer = useIntersectionObservation(setCurrentId);
     const headingEls = Array.from(document.querySelectorAll("section"));
     headingEls.forEach((v) => {
-      console.log(v);
       observer.observe(v);
     });
 
