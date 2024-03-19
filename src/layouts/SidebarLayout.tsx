@@ -11,7 +11,7 @@ interface IProp {
   children: React.ReactNode[];
 }
 
-export default function SidebarLayout({ children }: IProp) {
+export default function SidebarLayout() {
   const [headings, setHeadings] = useState<IHeading[]>([]);
   const [visited, setVisited] = useState(new Set());
   const currentIdx = useScrollSpy();
@@ -40,8 +40,9 @@ export default function SidebarLayout({ children }: IProp) {
         <AboutSection
           target={visited.has("section1") || currentIdx === "section1"}
         />
-        <ProjectSection />
         <SkillSection />
+        <ProjectSection />
+
         <ContactSection />
       </div>
     </div>
