@@ -21,19 +21,24 @@ export default function SkillSection({ target }: IProp) {
           />
           <span className=" text-3xl font-bold">{currentSkill?.text}</span>
         </div>
-        <div className="mt-4">
-          <div className=" rounded-xl bg-white ">
-            <div className={`w-[80%] rounded-xl`}>
+        {currentSkill?.prof && (
+          <div className="mt-4">
+            <div className=" rounded-xl bg-white ">
               <div
-                className={`h-4 rounded-xl ${
-                  target
-                    ? "animate-progress bg-yellow-400 transition-width"
-                    : ""
-                }`}
-              />
+                style={{ width: `${currentSkill.prof}%` }}
+                className={`rounded-xl`}
+              >
+                <div
+                  className={`h-4 rounded-xl ${
+                    target
+                      ? "animate-progress bg-yellow-400 transition-width"
+                      : ""
+                  }`}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }
@@ -56,11 +61,11 @@ export default function SkillSection({ target }: IProp) {
           </div>
   */
 
-  function ImgComponent({ src, text }: IImageCompProp) {
+  function ImgComponent({ src, text, prof }: IImageCompProp) {
     return (
       <div
         className="flex items-center w-24 m-8 relative group"
-        onClick={() => handleImgClick({ src, text })}
+        onClick={() => handleImgClick({ src, text, prof })}
       >
         <img
           src={`/${src}.png`}
@@ -83,7 +88,9 @@ export default function SkillSection({ target }: IProp) {
 
       <div className=" h-full border-2 rounded-lg border-black p-8 grid grid-cols-3">
         {SKILL_ITEM.map((v) => {
-          return <ImgComponent key={v.src} src={v.src} text={v.text} />;
+          return (
+            <ImgComponent key={v.src} src={v.src} text={v.text} prof={v.prof} />
+          );
         })}
       </div>
       <SkillDetailComponent />
