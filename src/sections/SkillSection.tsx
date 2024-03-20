@@ -47,20 +47,6 @@ export default function SkillSection({ target }: IProp) {
     setCurrentSkill(val);
   }
 
-  /*
-<div className=" rounded-xl bg-white ">
-            <div className={`w-[80%] rounded-xl`}>
-              <div
-                className={`h-4 rounded-xl ${
-                  target
-                    ? "animate-progress bg-yellow-400 transition-width"
-                    : ""
-                }`}
-              />
-            </div>
-          </div>
-  */
-
   function ImgComponent({ src, text, prof }: IImageCompProp) {
     return (
       <div
