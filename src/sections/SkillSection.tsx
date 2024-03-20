@@ -50,7 +50,7 @@ export default function SkillSection({ target }: IProp) {
   function ImgComponent({ src, text, prof }: IImageCompProp) {
     return (
       <div
-        className="flex items-center w-24 m-8 relative group"
+        className="flex items-center w-24 m-8 relative group cursor-pointer"
         onClick={() => handleImgClick({ src, text, prof })}
       >
         <img
@@ -58,7 +58,12 @@ export default function SkillSection({ target }: IProp) {
           width={96}
           className="mb-2 group-hover:scale-110 group-hover:duration-100 group-hover:blur-sm"
         />
-        <span className=" hidden group-hover:inline group-hover:visible group-hover:absolute group-hover:left-1/2 group-hover:top-1/2 group-hover:translate-x-[-50%] group-hover:translate-y-[-50%] group-hover:font-bold group-hover:cursor-default">
+        <span
+          className=" hidden group-hover:inline group-hover:visible 
+        group-hover:absolute group-hover:left-1/2 group-hover:top-1/2 
+        group-hover:translate-x-[-50%] group-hover:translate-y-[-50%] 
+        group-hover:font-bold "
+        >
           {text}
         </span>
       </div>
