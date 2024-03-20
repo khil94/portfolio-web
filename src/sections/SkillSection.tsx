@@ -7,15 +7,39 @@ interface IProp {
 }
 
 export default function SkillSection({ target }: IProp) {
-  const [currentSkill, setCurrentSkill] = useState("");
+  const [currentSkill, setCurrentSkill] = useState<IImageCompProp>();
+  const [show, setShow] = useState(false);
+
   function SkillDetailComponent() {
     return (
-      <div className=" w-96 border-2 rounded-lg border-black p-8 flex flex-col"></div>
+      <div className=" w-96 h-full border-2 rounded-lg border-black p-8 flex flex-col">
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src={`/${currentSkill?.src}.png`}
+            width={128}
+            className="mb-2 group-hover:scale-110 group-hover:duration-100 group-hover:blur-sm"
+          />
+          <span className=" text-3xl font-bold">{currentSkill?.text}</span>
+        </div>
+        <div className="mt-4">
+          <div className=" rounded-xl bg-white ">
+            <div className={`w-[80%] rounded-xl`}>
+              <div
+                className={`h-4 rounded-xl ${
+                  target
+                    ? "animate-progress bg-yellow-400 transition-width"
+                    : ""
+                }`}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 
-  function handleImgClick(e: React.MouseEvent) {
-    console.log(e.target);
+  function handleImgClick(val: IImageCompProp) {
+    setCurrentSkill(val);
   }
 
   /*
@@ -34,7 +58,10 @@ export default function SkillSection({ target }: IProp) {
 
   function ImgComponent({ src, text }: IImageCompProp) {
     return (
-      <div className="w-24 m-8 relative group">
+      <div
+        className="flex items-center w-24 m-8 relative group"
+        onClick={() => handleImgClick({ src, text })}
+      >
         <img
           src={`/${src}.png`}
           width={96}
@@ -54,11 +81,12 @@ export default function SkillSection({ target }: IProp) {
     >
       <h2 className="hidden">Skill</h2>
 
-      <div className=" max-w-md border-2 rounded-lg border-black p-8 grid grid-cols-3">
+      <div className=" h-full border-2 rounded-lg border-black p-8 grid grid-cols-3">
         {SKILL_ITEM.map((v) => {
-          return <ImgComponent src={v.src} text={v.text} />;
+          return <ImgComponent key={v.src} src={v.src} text={v.text} />;
         })}
       </div>
+      <SkillDetailComponent />
     </section>
   );
 }
