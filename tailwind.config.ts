@@ -36,7 +36,7 @@ const config: Config = {
       animation: {
         blink: "blink .5s infinite alternate step-end",
         appear: "appear 2s forwards linear alternate",
-        progress: "progress 2s linear forwards",
+        progress: "progress 1s linear forwards",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
