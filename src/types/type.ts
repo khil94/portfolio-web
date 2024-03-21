@@ -7,3 +7,8 @@ export interface IImageCompProp {
   src: string;
   text: string;
 }
+
+export interface ISkill {
+  title: string;
+  items: IImageCompProp[];
+}
