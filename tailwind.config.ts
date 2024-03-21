@@ -32,6 +32,9 @@ const config: Config = {
           to: { width: "100%" },
         },
       },
+      screens: {
+        mob: "320px",
+      },
 
       animation: {
         blink: "blink .5s infinite alternate step-end",
