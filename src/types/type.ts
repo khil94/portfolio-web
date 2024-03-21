@@ -6,5 +6,4 @@ export interface IHeading {
 export interface IImageCompProp {
   src: string;
   text: string;
-  prof?: number;
 }

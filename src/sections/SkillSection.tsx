@@ -21,24 +21,6 @@ export default function SkillSection({ target }: IProp) {
           />
           <span className=" text-3xl font-bold">{currentSkill?.text}</span>
         </div>
-        {currentSkill?.prof && (
-          <div className="mt-4">
-            <div className=" rounded-xl bg-white ">
-              <div
-                style={{ width: `${currentSkill.prof}%` }}
-                className={`rounded-xl`}
-              >
-                <div
-                  className={`h-4 rounded-xl ${
-                    target
-                      ? "animate-progress bg-yellow-400 transition-width"
-                      : ""
-                  }`}
-                />
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     );
   }
@@ -47,11 +29,11 @@ export default function SkillSection({ target }: IProp) {
     setCurrentSkill(val);
   }
 
-  function ImgComponent({ src, text, prof }: IImageCompProp) {
+  function ImgComponent({ src, text }: IImageCompProp) {
     return (
       <div
         className="flex items-center w-24 m-8 relative group cursor-pointer"
-        onClick={() => handleImgClick({ src, text, prof })}
+        onClick={() => handleImgClick({ src, text })}
       >
         <img
           src={`/${src}.png`}
@@ -76,12 +58,10 @@ export default function SkillSection({ target }: IProp) {
       className="max-auto max-w-7xl px-4 sm:px-6 lg:px-8 lg:pt-32 flex min-h-screen items-center"
     >
       <h2 className="hidden">Skill</h2>
-
-      <div className=" h-full border-2 rounded-lg border-black p-8 grid grid-cols-3">
+      {/* <h1>Skill</h1> */}
+      <div className="h-full border-2 rounded-lg border-black p-8 grid grid-cols-3">
         {SKILL_ITEM.map((v) => {
-          return (
-            <ImgComponent key={v.src} src={v.src} text={v.text} prof={v.prof} />
-          );
+          return <ImgComponent key={v.src} src={v.src} text={v.text} />;
         })}
       </div>
       <SkillDetailComponent />
