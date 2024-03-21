@@ -8,7 +8,7 @@ interface IProp {
 
 export default function SkillSection({ target }: IProp) {
   const [idx, setIdx] = useState(0);
-  const [width, setWidth] = useState<number>();
+  const [width, setWidth] = useState<number>(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,37 +48,41 @@ export default function SkillSection({ target }: IProp) {
   }
 
   function SkillBox() {
-    if (width && width <= 1440) {
-      return (
-        <>
-          <div className="relative mx-3 h-full border-2 rounded-lg border-black p-8 grid grid-cols-2">
-            <span className="absolute font-bold text-lg top-0 left-1/2 translate-y-4 translate-x-[-50%]">
-              {SKILL_LIST[idx].title}
-            </span>
-            <img
-              src="/left-arrow.png"
-              width={32}
-              onClick={() => setIdx(idx - 1 > 0 ? idx - 1 : 0)}
-              className="arrow absolute left-0 top-1/2 translate-y-[-50%] mb-2 active:opacity-40"
-            />
-            <img
-              src="/right-arrow.png"
-              width={32}
-              onClick={() =>
-                setIdx(
-                  idx + 1 < SKILL_LIST.length - 1
-                    ? idx + 1
-                    : SKILL_LIST.length - 1
-                )
-              }
-              className="arrow absolute right-0 top-1/2 translate-y-[-50%] active:opacity-40"
-            />
-            {SKILL_LIST[idx].items.map((v) => {
-              return <ImgComponent key={v.src} src={v.src} text={v.text} />;
-            })}
-          </div>
-        </>
-      );
+    if (width) {
+      if (width <= 1440) {
+        return (
+          <>
+            <div className="relative mx-3 h-full border-2 rounded-lg border-black p-8 grid grid-cols-2">
+              <span className="absolute font-bold text-lg top-0 left-1/2 translate-y-4 translate-x-[-50%]">
+                {SKILL_LIST[idx].title}
+              </span>
+              <img
+                src="/left-arrow.png"
+                width={32}
+                onClick={() => setIdx(idx - 1 > 0 ? idx - 1 : 0)}
+                className="arrow absolute left-0 top-1/2 translate-y-[-50%] mb-2 active:opacity-40"
+              />
+              <img
+                src="/right-arrow.png"
+                width={32}
+                onClick={() =>
+                  setIdx(
+                    idx + 1 < SKILL_LIST.length - 1
+                      ? idx + 1
+                      : SKILL_LIST.length - 1
+                  )
+                }
+                className="arrow absolute right-0 top-1/2 translate-y-[-50%] active:opacity-40"
+              />
+              {SKILL_LIST[idx].items.map((v) => {
+                return <ImgComponent key={v.src} src={v.src} text={v.text} />;
+              })}
+            </div>
+          </>
+        );
+      }
+    } else {
+      return <>{/* 로딩 컴포넌트 넣을지 고민중 */}</>;
     }
 
     return (
