@@ -61,9 +61,7 @@ export default function SkillSection({ target }: IProp) {
       <>
         {SKILL_LIST.map((v) => {
           return (
-            <div
-              className={`relative min-w-80 border-2 rounded-lg border-black py-8 grid grid-cols-2`}
-            >
+            <div className={`relative min-w-80 py-8 grid grid-cols-2`}>
               <span className="absolute font-bold text-lg top-0 left-1/2 translate-y-4 translate-x-[-50%]">
                 {v.title}
               </span>
@@ -82,7 +80,9 @@ export default function SkillSection({ target }: IProp) {
       if (width <= 1440) {
         return (
           <>
-            <div className={`relative w-80 overflow-hidden`}>
+            <div
+              className={`relative w-80 border-2 rounded-lg border-black overflow-hidden`}
+            >
               <div
                 ref={wrapperRef}
                 className={`slide-wrapper h-full flex duration-1000`}
