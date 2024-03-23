@@ -1,4 +1,4 @@
-import { SKILL_LIST } from "@/constants/constants";
+import { SIZE, SKILL_LIST } from "@/constants/constants";
 import { IImageCompProp } from "@/types/type";
 import { useEffect, useRef, useState } from "react";
 
@@ -36,11 +36,11 @@ export default function SkillSection({ target }: IProp) {
 
   function ImgComponent({ src, text }: IImageCompProp) {
     return (
-      <div className="flex items-center w-24 m-8 relative group">
-        <div className=" w-24 h-24 flex items-center">
+      <div className="flex items-center justify-center p-3 relative group">
+        <div className=" min-w-24 min-h-24 flex items-center justify-center">
           <img
             src={`/${src}.png`}
-            width={96}
+            width={72}
             className=" group-hover:scale-110 transform group-hover:duration-100 group-hover:blur-sm"
           />
         </div>
@@ -77,7 +77,7 @@ export default function SkillSection({ target }: IProp) {
 
   function SkillBox() {
     if (width) {
-      if (width <= 1440) {
+      if (width < SIZE.lg) {
         return (
           <>
             <div
