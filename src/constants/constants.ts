@@ -97,3 +97,9 @@ export const SKILL_LIST: ISkill[] = [
   HAVE_EXPERIENCE_SKILL,
   COLLABORATION_SKILL,
 ];
+
+export const SIZE = {
+  lg: 1024,
+  md: 768,
+  mob: 360,
+} as const;
