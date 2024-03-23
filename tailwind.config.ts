@@ -33,7 +33,7 @@ const config: Config = {
         },
       },
       screens: {
-        mob: "320px",
+        mob: "360px",
       },
 
       animation: {
