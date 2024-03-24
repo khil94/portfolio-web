@@ -22,12 +22,12 @@ export function useIntersectionObservation(
   return observer;
 }
 
-export function useScrollSpy() {
+export function useScrollSpy(target: string) {
   const [currentId, setCurrentId] = useState("");
 
   useEffect(() => {
     const observer = useIntersectionObservation(setCurrentId);
-    const headingEls = Array.from(document.querySelectorAll("section"));
+    const headingEls = Array.from(document.querySelectorAll(target));
     headingEls.forEach((v) => {
       observer.observe(v);
     });

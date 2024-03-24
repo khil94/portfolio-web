@@ -14,7 +14,7 @@ interface IProp {
 export default function SidebarLayout() {
   const [headings, setHeadings] = useState<IHeading[]>([]);
   const [visited, setVisited] = useState(new Set());
-  const currentIdx = useScrollSpy();
+  const currentIdx = useScrollSpy("section");
 
   useEffect(() => {
     const contentHeadings = Array.from(document.querySelectorAll("h2"));
