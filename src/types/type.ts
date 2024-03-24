@@ -12,3 +12,9 @@ export interface ISkill {
   title: string;
   items: IImageCompProp[];
 }
+
+export interface IProject {
+  name: string;
+  detail: string[];
+  skills: string[];
+}
