@@ -15,7 +15,7 @@ export default function ProjectSection() {
       <div className="w-full flex">
         <div className="relative w-full ">
           {PROJECT_LIST.map((v) => {
-            return <ProjectDetailSection data={v} />;
+            return <ProjectDetailSection key={v.name} data={v} />;
           })}
         </div>
       </div>
