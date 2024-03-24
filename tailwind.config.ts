@@ -31,6 +31,14 @@ const config: Config = {
           from: { width: "30%" },
           to: { width: "100%" },
         },
+        appear: {
+          from: { opacity: "0", transform: "translateX(-100%)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        appearRight: {
+          from: { opacity: "0", transform: "translateX(100%)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
       },
       screens: {
         mob: "360px",
@@ -40,6 +48,8 @@ const config: Config = {
         blink: "blink .5s infinite alternate step-end",
         drawLine: "drawLine 2s forwards linear alternate",
         progress: "progress 1s linear forwards",
+        appear: "appear 1.5s linear forwards",
+        appearRight: "appearRight 1.5s linear forwards",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

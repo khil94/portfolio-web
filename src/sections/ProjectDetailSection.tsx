@@ -8,13 +8,13 @@ export default function ProjectDetailSection({ data }: IProp) {
   return (
     <div
       key={data.name + "-wrapper"}
-      className="flex even:justify-end w-full mb-12"
+      className="flex even:justify-end w-full mb-12 animate-appear even:animate-appearRight"
     >
-      <div className="border-2 border-black p-8 rounded-lg">
+      <div className="border-2 border-black p-8 rounded-lg ">
         <h1 className=" font-semibold mb-3">{data.name}</h1>
         <div>
           {data.detail.map((v) => {
-            return <div key={v}>{v}</div>;
+            return <li key={data.name + v}>{v}</li>;
           })}
         </div>
       </div>
