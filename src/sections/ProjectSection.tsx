@@ -1,10 +1,17 @@
 import { PROJECT_LIST } from "@/constants/constants";
+import { useScrollSpy } from "@/hooks/useIntersectionObservation";
 import { IProject } from "@/types/type";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectDetailSection from "./ProjectDetailSection";
 
 export default function ProjectSection() {
   const [currentProject, setCurrentProject] = useState<IProject>();
+  const currentDetailId = useScrollSpy("h3");
+  const [visited, setVisited] = useState(new Set());
+
+  useEffect(() => {
+    currentDetailId.length > 0 && setVisited(visited.add(currentDetailId));
+  }, [currentDetailId]);
 
   return (
     <section
@@ -15,7 +22,13 @@ export default function ProjectSection() {
       <div className="w-full flex">
         <div className="relative w-full ">
           {PROJECT_LIST.map((v) => {
-            return <ProjectDetailSection key={v.name} data={v} />;
+            return (
+              <ProjectDetailSection
+                isTarget={visited.has(v.name) || currentDetailId === v.name}
+                key={v.name}
+                data={v}
+              />
+            );
           })}
         </div>
       </div>
