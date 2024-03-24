@@ -40,9 +40,7 @@ export default function SidebarLayout() {
         <AboutSection
           target={visited.has("section1") || currentIdx === "section1"}
         />
-        <SkillSection
-          target={visited.has("section2") || currentIdx === "section2"}
-        />
+        <SkillSection />
         <ProjectSection />
 
         <ContactSection />
