@@ -92,7 +92,7 @@ export const COLLABORATION_SKILL: ISkill = {
   items: COLLABORATION_SKILL_LIST,
 };
 
-export const SKILL_LIST: ISkill[] = [
+export const SKILL_LIST: ReadonlyArray<ISkill> = [
   EXPERIENCED_SKILL,
   HAVE_EXPERIENCE_SKILL,
   COLLABORATION_SKILL,
@@ -104,7 +104,7 @@ export const SIZE = {
   mob: 360,
 } as const;
 
-export const PROJECT_LIST: IProject[] = [
+export const PROJECT_LIST: ReadonlyArray<IProject> = [
   {
     name: "보험 추천 어플리케이션 개발/유지보수",
     detail: [
@@ -118,14 +118,14 @@ export const PROJECT_LIST: IProject[] = [
   {
     name: "보험 추천 웹 서비스 개발",
     detail: [
-      "React + Typescript 기반 보험 추천 웹 서비스 개발",
+      "React + Typescript 기반 보험 추천 웹 서비스",
       "기존 서비스가 Js를 기반으로 개발을 하여 버그핸들링에 애로사항을 느껴 Ts로 변경하여 개발",
       "전반적인 화면및 기능개발",
     ],
     skills: ["React", "Typescript", "Axios", "Styled-Components"],
   },
   {
-    name: "로보어드바이저 서비스 모니터링을 위한 어드민 페이지 개발",
+    name: "로보어드바이저 서비스 모니터링을 위한 어드민 페이지",
     detail: [
       "사내 서비스로 개발중이던 로보어드바이저의 어드민 페이지의 개발을 담당",
       "서비스 전반과 시뮬레이션 화면을 담당",
@@ -136,7 +136,7 @@ export const PROJECT_LIST: IProject[] = [
   {
     name: "Lolstat.net",
     detail: [
-      "게임 League of Legneds 의 전적을 검색 / 확인할 수 있는 웹 사이트의 개발",
+      "게임 League of Legneds 의 전적을 검색 / 확인할 수 있는 웹 사이트",
       "riot사에서 제공하는 api를 활용한 사이트",
       "AWS Amplify를 통한 배포",
       "프로젝트의 FE전체를 담당",
@@ -144,4 +144,9 @@ export const PROJECT_LIST: IProject[] = [
     ],
     skills: ["React", "Typescript", "Axios", "Scss", "Vite", "swr"],
   },
-] as const;
+  {
+    name: "나의 포트폴리오 사이트 개발",
+    detail: ["나의 포트폴리오 사이트 개발"],
+    skills: ["React", "Typescript", "TailwindCSS"],
+  },
+];
