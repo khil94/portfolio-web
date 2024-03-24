@@ -17,7 +17,7 @@ export default function AboutSection({ target }: IProp) {
               className={` relative mx-auto text-5xl text-left font-bold 
               ${
                 target
-                  ? "before:content-[''] before:bg-red-500 before:absolute before:w-full before:h-1 before:bottom-0 before:left-0 before:animate-appear"
+                  ? "before:content-[''] before:bg-red-500 before:absolute before:w-full before:h-1 before:bottom-0 before:left-0 before:animate-drawLine"
                   : ""
               }
             `}
@@ -48,7 +48,7 @@ export default function AboutSection({ target }: IProp) {
             <h1
               className={`mx-auto text-5xl text-left  font-bold ${
                 target
-                  ? "before:content-[''] before:bg-red-500 before:absolute before:w-full before:h-1 before:bottom-0 before:left-0 before:animate-appear"
+                  ? "before:content-[''] before:bg-red-500 before:absolute before:w-full before:h-1 before:bottom-0 before:left-0 before:animate-drawLine"
                   : ""
               }`}
             >
@@ -66,7 +66,7 @@ export default function AboutSection({ target }: IProp) {
             <h1
               className={`mx-auto text-5xl text-left  font-bold ${
                 target
-                  ? "before:content-[''] before:bg-red-500 before:absolute before:w-full before:h-1 before:bottom-0 before:left-0 before:animate-appear"
+                  ? "before:content-[''] before:bg-red-500 before:absolute before:w-full before:h-1 before:bottom-0 before:left-0 before:animate-drawLine"
                   : ""
               }`}
             >

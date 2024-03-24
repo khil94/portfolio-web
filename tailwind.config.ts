@@ -16,7 +16,7 @@ const config: Config = {
             "border-color": "transparent",
           },
         },
-        appear: {
+        drawLine: {
           "0%": {
             transform: "scaleX(0)",
           },
@@ -38,7 +38,7 @@ const config: Config = {
 
       animation: {
         blink: "blink .5s infinite alternate step-end",
-        appear: "appear 2s forwards linear alternate",
+        drawLine: "drawLine 2s forwards linear alternate",
         progress: "progress 1s linear forwards",
       },
       backgroundImage: {
