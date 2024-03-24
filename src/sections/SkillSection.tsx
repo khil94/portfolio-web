@@ -121,7 +121,10 @@ export default function SkillSection() {
       <>
         {SKILL_LIST.map((v) => {
           return (
-            <div className="relative bg-white mx-3 h-full border-2 rounded-lg border-black p-8 grid grid-cols-2 shadow-lime-700 shadow-lg">
+            <div
+              key={v.title}
+              className="relative bg-white mx-3 h-full border-2 rounded-lg border-black p-8 grid grid-cols-2 shadow-lime-700 shadow-lg"
+            >
               <span className="absolute font-bold text-lg top-0 left-1/2 translate-y-4 translate-x-[-50%]">
                 {v.title}
               </span>
