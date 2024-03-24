@@ -138,7 +138,7 @@ export default function SkillSection() {
   return (
     <section
       id="section2"
-      className="max-auto from-lime-400 bg-gradient-to-b px-4 mob:py-8 mob:px-0 sm:py-16 sm:px-6 lg:px-8 lg:py-32 flex min-h-screen items-center justify-around"
+      className="max-auto from-lime-300 bg-gradient-to-b px-4 mob:py-8 mob:px-0 sm:py-16 sm:px-6 lg:px-8 lg:py-32 flex min-h-screen items-center justify-around"
     >
       <h2 className="hidden">Skill</h2>
       {/* <h1>Skill</h1> */}
