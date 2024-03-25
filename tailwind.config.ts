@@ -48,8 +48,8 @@ const config: Config = {
         blink: "blink .5s infinite alternate step-end",
         drawLine: "drawLine 2s forwards linear alternate",
         progress: "progress 1s linear forwards",
-        appear: "appear 1.5s linear forwards",
-        appearRight: "appearRight 1.5s linear forwards",
+        appear: "appear 1s linear forwards",
+        appearRight: "appearRight 1s linear forwards",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
