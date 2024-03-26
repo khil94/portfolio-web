@@ -20,7 +20,11 @@ export default function ProjectDetailSection({ data, isTarget }: IProp) {
         </h3>
         <div>
           {data.detail.map((v) => {
-            return <li key={data.name + v}>{v}</li>;
+            return (
+              <li className="cursour-default" key={data.name + v}>
+                {v}
+              </li>
+            );
           })}
         </div>
         <div className="h-auto w-auto">
