@@ -1,11 +1,9 @@
 import { PROJECT_LIST } from "@/constants/constants";
 import { useScrollSpy } from "@/hooks/useIntersectionObservation";
-import { IProject } from "@/types/type";
 import { useEffect, useState } from "react";
 import ProjectDetailSection from "./ProjectDetailSection";
 
 export default function ProjectSection() {
-  const [currentProject, setCurrentProject] = useState<IProject>();
   const currentDetailId = useScrollSpy("h3");
   const [visited, setVisited] = useState(new Set());
 
