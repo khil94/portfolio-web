@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-export function useIntersectionObservation(
+export function IntersectionObservation(
   setter: Dispatch<SetStateAction<string>>
 ) {
   const observer = new IntersectionObserver(
@@ -26,7 +26,7 @@ export function useScrollSpy(target: string) {
   const [currentId, setCurrentId] = useState("");
 
   useEffect(() => {
-    const observer = useIntersectionObservation(setCurrentId);
+    const observer = IntersectionObservation(setCurrentId);
     const headingEls = Array.from(document.querySelectorAll(target));
     headingEls.forEach((v) => {
       observer.observe(v);
