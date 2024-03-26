@@ -1,5 +1,6 @@
 import { SIZE, SKILL_LIST } from "@/constants/constants";
 import { IImageCompProp } from "@/types/type";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export default function SkillSection() {
@@ -34,9 +35,10 @@ export default function SkillSection() {
     return (
       <div className="flex items-center justify-center p-3 relative group">
         <div className=" min-w-24 min-h-24 flex items-center justify-center">
-          <img
+          <Image
             src={`/${src}.png`}
             width={72}
+            alt={src}
             className=" group-hover:scale-110 transform group-hover:duration-100 group-hover:blur-sm"
           />
         </div>
@@ -85,7 +87,7 @@ export default function SkillSection() {
               >
                 <SkillComponentList />
               </div>
-              <img
+              <Image
                 src="/left-arrow.png"
                 width={32}
                 onClick={() => {
@@ -96,9 +98,10 @@ export default function SkillSection() {
                   translator(target);
                   idx.current = target;
                 }}
+                alt="left-arrow"
                 className="arrow absolute left-0 top-1/2 translate-y-[-50%] mb-2 active:opacity-40"
               />
-              <img
+              <Image
                 src="/right-arrow.png"
                 width={32}
                 onClick={() => {
@@ -107,6 +110,7 @@ export default function SkillSection() {
                   translator(target);
                   idx.current = target;
                 }}
+                alt="right-arrow"
                 className="arrow absolute right-0 top-1/2 translate-y-[-50%] active:opacity-40"
               />
             </div>
