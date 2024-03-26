@@ -8,7 +8,8 @@ export default function ProjectSection() {
   const [visited, setVisited] = useState(new Set());
 
   useEffect(() => {
-    currentDetailId.length > 0 && setVisited(visited.add(currentDetailId));
+    currentDetailId.length > 0 &&
+      setVisited((prev) => prev.add(currentDetailId));
   }, [currentDetailId]);
 
   return (

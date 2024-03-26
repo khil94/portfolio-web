@@ -29,7 +29,7 @@ export default function SidebarLayout() {
   }, []);
 
   useEffect(() => {
-    setVisited(visited.add(currentIdx));
+    setVisited((prev) => prev.add(currentIdx));
   }, [currentIdx]);
 
   return (
