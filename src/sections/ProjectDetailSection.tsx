@@ -1,3 +1,4 @@
+import Tag from "@/components/Tag";
 import { IProject } from "@/types/type";
 
 interface IProp {
@@ -20,6 +21,11 @@ export default function ProjectDetailSection({ data, isTarget }: IProp) {
         <div>
           {data.detail.map((v) => {
             return <li key={data.name + v}>{v}</li>;
+          })}
+        </div>
+        <div className="h-auto w-auto">
+          {data.skills.map((v) => {
+            return <Tag content={v} />;
           })}
         </div>
       </div>
