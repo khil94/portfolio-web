@@ -40,7 +40,8 @@ export default function SkillSection() {
             width={72}
             height={72}
             alt={src}
-            className=" group-hover:scale-110 transform group-hover:duration-100 group-hover:blur-sm"
+            priority
+            className="h-auto w-auto object-cover group-hover:scale-110 transform group-hover:duration-100 group-hover:blur-sm"
           />
         </div>
         <span
