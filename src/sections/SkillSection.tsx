@@ -59,7 +59,10 @@ export default function SkillSection() {
       <>
         {SKILL_LIST.map((v) => {
           return (
-            <div className={`relative min-w-80 py-8 grid grid-cols-2`}>
+            <div
+              key={v.title}
+              className={`relative min-w-80 py-8 grid grid-cols-2`}
+            >
               <span className="absolute font-bold text-lg top-0 left-1/2 translate-y-4 translate-x-[-50%]">
                 {v.title}
               </span>
