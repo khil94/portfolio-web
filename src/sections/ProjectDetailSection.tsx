@@ -29,7 +29,7 @@ export default function ProjectDetailSection({ data, isTarget }: IProp) {
         </div>
         <div className="h-auto w-auto">
           {data.skills.map((v) => {
-            return <Tag content={v} />;
+            return <Tag key={v} content={v} />;
           })}
         </div>
       </div>
