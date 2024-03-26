@@ -38,6 +38,7 @@ export default function SkillSection() {
           <Image
             src={`/${src}.png`}
             width={72}
+            height={72}
             alt={src}
             className=" group-hover:scale-110 transform group-hover:duration-100 group-hover:blur-sm"
           />
@@ -93,6 +94,7 @@ export default function SkillSection() {
               <Image
                 src="/left-arrow.png"
                 width={32}
+                height={32}
                 onClick={() => {
                   const target =
                     idx.current - 1 >= 0
@@ -107,6 +109,7 @@ export default function SkillSection() {
               <Image
                 src="/right-arrow.png"
                 width={32}
+                height={32}
                 onClick={() => {
                   const target =
                     idx.current + 1 < SKILL_LIST.length ? idx.current + 1 : 0;
