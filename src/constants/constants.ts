@@ -146,7 +146,11 @@ export const PROJECT_LIST: ReadonlyArray<IProject> = [
   },
   {
     name: "나의 포트폴리오 사이트 개발",
-    detail: ["나의 포트폴리오 사이트 개발"],
+    detail: [
+      "나만의 포트폴리오 사이트를 가지기 위해 제작",
+      "Nextjs + TailwindCSS 기반으로 제작",
+      "원페이지 기반이라 Nextjs의 기능을 다 활용하지는 못함",
+    ],
     skills: ["React", "Typescript", "TailwindCSS"],
   },
 ];
