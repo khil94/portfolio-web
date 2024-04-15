@@ -99,6 +99,7 @@ export const SKILL_LIST: ReadonlyArray<ISkill> = [
 ];
 
 export const SIZE = {
+  lger: 1280,
   lg: 1024,
   md: 768,
   mob: 360,

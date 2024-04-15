@@ -80,7 +80,7 @@ export default function SkillSection() {
 
   function SkillBox() {
     if (width) {
-      if (width < SIZE.lg) {
+      if (width < SIZE.lger) {
         return (
           <>
             <div
